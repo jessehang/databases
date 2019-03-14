@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS messages (
   message_text VARCHAR(255),
   user int,
   room int,
-  time_created datetime,
   primary key (id)
 );
 
@@ -30,6 +29,18 @@ ADD foreign key (user) references users(id);
 
 ALTER TABLE messages
 ADD foreign key (room) references rooms(id);
+
+INSERT INTO rooms (room_name)
+value ('broken stuff');
+
+INSERT INTO users (username)
+value ('adam');
+
+INSERT into messages (message_text, room, user)
+values ('I want to die', 1,1);
+
+INSERT INTO messages (message_text, room, user)
+values ('*sobs technically*', 1, 1);
 
 /* Create other tables and define schemas for them here! */
 
